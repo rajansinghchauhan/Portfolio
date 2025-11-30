@@ -1,0 +1,28 @@
+src/
+│
+├── app/
+│   ├── components/             # UI sections of your portfolio
+│   │   ├── navbar/
+│   │   ├── hero/
+│   │   ├── about/
+│   │   ├── projects/
+│   │   ├── contact/
+│   │   └── footer/
+│   │
+│   ├── models/                 # Interfaces (optional but recommended)
+│   │   └── project.model.ts
+│   │
+│   ├── data/                   # Static data (your project list, skills, etc.)
+│   │   └── projects.data.ts
+│   │
+│   ├── app-routing.module.ts   # Routes (Home → Projects → Contact)
+│   ├── app.component.ts        # Main root component
+│   └── app.module.ts           # All components declared here
+│
+├── assets/
+│   ├── images/                 # Images for hero, projects, etc.
+│   └── styles/
+│       ├── _variables.scss     # Global colors, spacing, fonts
+│       └── global.scss         # Main global styling
+│
+└── styles.scss                 # Imports global.scss
