@@ -18,4 +18,12 @@ export class Hero {
     this.user = this.userService.getUserDetails();
   }
 
+  downloadPDF() {
+    const a = document.createElement('a');
+    a.target = '_target';
+    a.href = './assets/resume/Resume.pdf';
+    a.download = this.user.name+'_resume.pdf';
+    a.click();
+  }
+
 }

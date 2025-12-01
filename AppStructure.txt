@@ -26,3 +26,19 @@ src/
 │       └── global.scss         # Main global styling
 │
 └── styles.scss                 # Imports global.scss
+
+
+
+-------------------------------------------------------------------------------------------------
+add ons
+Certifications Component
+- Display HackerRank badges (Angular, C#, SQL)
+- Certificates in J2EE, Python, Django, Microsoft AI Classroom
+
+Achievements Component
+- Awards: Gold Star Performer, Star Team Award
+- Silver Medal in Slow Cycling (shows personality & extracurriculars)
+
+Contact Component
+- Email, LinkedIn, GitHub links
+- Simple contact form
