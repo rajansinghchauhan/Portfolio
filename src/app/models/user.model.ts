@@ -6,4 +6,6 @@ export interface User {
     location: string;
     profileImage: string;
     skills: string[];
+    tagline: string;
+    about: string;
 }

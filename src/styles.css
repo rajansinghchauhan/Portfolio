@@ -1,0 +1,19 @@
+.hero-section {
+  background: var(--background);
+  color: var(--text);
+  padding: 5rem 1rem;
+}
+
+.hero-title {
+  color: var(--heading);
+  font-weight: bold;
+}
+
+.hero-role {
+  color: var(--primary);
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--secondary);
+}
