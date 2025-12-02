@@ -3,7 +3,7 @@ name: Build and Deploy Portfolio App
 on:
   push:
     branches:
-      - main        # deploy when pushing to main branch
+      - main
 
 jobs:
   build:
@@ -28,4 +28,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist/portfolioapp/browser
+          folder: dist/PortfolioApp/browser
