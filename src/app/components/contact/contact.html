@@ -1,22 +1,41 @@
-<section id="contact" class="container py-5">
-  <h2 class="mb-4">Contact Me</h2>
+<section id="contact" class="contact container py-5">
+  <h2>Contact Me</h2>
 
-  <form class="row g-3">
-    <div class="col-md-6">
-      <input type="text" class="form-control" placeholder="Your Name" required />
+  <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+    <div class="mb-3">
+      <label class="form-label">Name</label>
+      <input class="form-control" formControlName="name" />
+      <div *ngIf="form.get('name')?.touched && form.get('name')?.invalid" class="text-danger small">
+        Name is required (min 2 chars).
+      </div>
     </div>
 
-    <div class="col-md-6">
-      <input type="email" class="form-control" placeholder="Your Email" required />
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input class="form-control" formControlName="email" />
+      <div *ngIf="form.get('email')?.touched && form.get('email')?.invalid" class="text-danger small">
+        Enter a valid email.
+      </div>
     </div>
 
-    <div class="col-12">
-      <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+    <!-- honeypot: hide from users but present to bots (do NOT remove, helps reduce spam) -->
+    <input type="text" formControlName="_gotcha" style="display:none" autocomplete="off" />
+
+    <div class="mb-3">
+      <label class="form-label">Message</label>
+      <textarea class="form-control" formControlName="message" rows="6"></textarea>
+      <div *ngIf="form.get('message')?.touched && form.get('message')?.invalid" class="text-danger small">
+        Please enter a message (min 10 chars).
+      </div>
     </div>
 
-    <div class="col-12">
-      <button class="btn btn-primary px-4">Send Message</button>
+    <div class="d-flex align-items-center gap-3">
+      <button type="submit" class="btn btn-primary" [disabled]="sending">
+        <span *ngIf="!sending">Send Message</span>
+        <span *ngIf="sending">Sending…</span>
+      </button>
+      <div *ngIf="success" class="text-success">Thanks — I will get back to you soon!</div>
+      <div *ngIf="error" class="text-danger">{{ error }}</div>
     </div>
   </form>
 </section>
-
